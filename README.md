@@ -1,5 +1,5 @@
 # CodePad
-Notepad application for tagging and saving code snippets. Built using NodeJS and the Electron Framework
+Notepad application for tagging and saving code snippets. Built using NodeJS and the Electron Framework.
 
 ## Install/Run with 'npm'
 ```bash
