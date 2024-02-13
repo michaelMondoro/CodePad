@@ -1,0 +1,69 @@
+<html data-theme="dark">
+    <title>CodeSnippets</title>
+    <head style="-webkit-app-region: drag">
+        <link rel="stylesheet" href="../css/pico.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/devibeans.min.css">
+        <script src="../highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </head>
+
+    <body>
+        <div class="container">
+            <section style="-webkit-app-region: drag; min-height: 25px;"></section>
+            <main>
+                <maincontent>
+                    <!-- Top Controls -->
+                    <div class="controls" role="group">
+                        <select id="lang_dropdown" style="width: 25%;" onchange="sortByLanguage()">
+                            <option value="" disabled selected>sort</option>
+                            <option value="all">all</option>
+                            <% for(var i = 0; i < dirs.length; i++) { %>
+                                <option><%= dirs[i] %></option>
+                            <% } %>
+                        </select>
+                        <button data-type="snippetModal" onclick="showModal(this)">Create Snippet</button>
+                        <button onclick="exportSnippets()">Export</button>
+                    </div>
+                    <section></section>
+                    <!-- Create New Snippet -->
+                    <dialog id="snippetModal" class="modal">
+                        <article>
+                            <header>
+                              <a href="#close" aria-label="Close" class="close" onclick="close()"></a>
+                              Add New Snippet
+                            </header>
+                            <input type="text" placeholder="Name" id="snippetName">
+                            <input list="tags" type="text" placeholder="language/framework" id="language">
+                            <datalist id="tags" style="background-color: #18232c!important;">
+                                <% for(var i = 0; i < dirs.length; i++) { %>
+                                    <option><%= dirs[i] %></option>
+                                <% } %> 
+                                </datalist>
+                            <textarea id="snippetContent"></textarea>
+                            <button onclick="saveSnippet()">Add</button>
+                          </article>
+                    </dialog>
+
+                    <!-- Display Snippets -->
+                    <% for(var i = 0; i < snippets.length; i++) { %>
+                        <details id="snippet" data-lang="<%= snippets[i]['lang']%>">
+                            <summary ><%= snippets[i]['name'] %></summary>
+                            <button class="contrast" style="width: 11%;padding:5px"><%= snippets[i]['lang']%></button>
+                            <pre id="<%= snippets[i]['name'] %>">
+                                <code><%= snippets[i]['snippet'] %></code>
+                            </pre>
+                            <div class="controls">
+                                <button id="copy" class="secondary" data-snip="<%= snippets[i]['name'] %>" onclick="copyToClipboard(this)">copy</button>
+                                <button class="secondary" data-type="snippetModal" data-lang="<%= snippets[i]['lang']%>" data-snip="<%= snippets[i]['name'] %>" onclick="editSnippet(this)">edit</button>
+                                <button class="secondary" data-snip="<%= snippets[i]['name'] %>" data-lang="<%= snippets[i]['lang']%>" onclick="deleteSnippet(this)">delete</button>
+                            </div>
+                        </details>
+                    <% } %>
+                    
+                </maincontent>
+            </main>
+        </div>
+    </body>
+    <script src="../../renderer.js"></script>
+</html>

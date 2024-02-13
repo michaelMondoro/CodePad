@@ -1,0 +1,60 @@
+:root {
+    --primary: #023fc2!important;
+    --primary-hover: #021f80!important;
+    --primary-focus: rgba(216, 27, 96, 0.125)!important;
+    --primary-inverse: #FFF!important;
+    --code-background: #18232c;
+}
+
+
+main {
+    display: grid;
+    /* grid-template-columns: 1fr 4fr; */
+}
+
+pre {
+    padding: 1em;
+    user-select: text;
+}
+
+sidenav p {
+    padding: .5em;
+}   
+
+sidenav p:hover {
+    /* background-color: #292a2b9e; */
+    cursor: pointer;
+}
+
+dialog {
+    width: 90%!important;
+    height: 90%!important;
+}
+
+#clicked {
+    text-align: center;
+    position: absolute; 
+    display: block;
+    text-shadow: black 2px 2px 5px;
+    opacity: 0%;
+    transition: opacity 10s ease-in-out;
+}
+#snippet img {
+    width: 25px;
+}
+#snippet span:hover {
+    cursor: pointer;
+}
+.controls {
+    display: flex!important; 
+    flex-direction: row!important; 
+    justify-content: space-between!important;
+}
+.controls button {
+    width: 20%!important;
+}
+
+newModal {
+    width: 70%;
+    height: 50%;
+}
