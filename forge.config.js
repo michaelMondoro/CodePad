@@ -11,7 +11,7 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-zip',
-      platforms: [],
+      platforms: ['darwin'],
     },
     {
       name: '@electron-forge/maker-deb',
@@ -27,6 +27,19 @@ module.exports = {
       config: {
         icon: './static/icon.icns',
         format: 'ULFO'
+      }
+    }
+  ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'michaelMondoro',
+          name: 'CodePad'
+        },
+        prerelease: false,
+        draft: true
       }
     }
   ],
