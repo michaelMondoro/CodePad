@@ -8,16 +8,6 @@ npm install
 npm start
 ```
 
-## Install Natively
-```bash
-cd CodePad/
-npm install
-npm run make
-# This uses the forge.config.js file, currently configured to build for MacOS
-# Can be updated to build for other platforms
-```
-Once the build is complete - run the created installer to install the app on your device
-
 
 ## 
 ![Screen Shot 2024-02-13 at 12 35 14 PM](https://github.com/michaelMondoro/CodePad/assets/38412172/300b6bdb-704a-45b5-b65e-94aa7cd79281)
