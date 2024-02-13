@@ -1,3 +1,5 @@
+[![Build/release](https://github.com/michaelMondoro/CodePad/actions/workflows/build.yml/badge.svg)](https://github.com/michaelMondoro/CodePad/actions/workflows/build.yml)
+
 # CodePad
 Notepad application for tagging and saving code snippets. Built using NodeJS and the Electron Framework.
 
