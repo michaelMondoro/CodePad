@@ -1,7 +1,7 @@
 {
   "name": "CodeSnippets",
   "version": "1.0.0",
-  "description": "Notepad application for tagging and saving code snippets",
+  "description": "Notepad application for tagging and saving code snippets ",
   "main": "main.js",
   "icon": "./static/icon.icns",
   "scripts": {
