@@ -1,6 +1,6 @@
 {
   "name": "CodePad",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Notepad application for tagging and saving code snippets ",
   "main": "main.js",
   "icon": "./static/icon.icns",
